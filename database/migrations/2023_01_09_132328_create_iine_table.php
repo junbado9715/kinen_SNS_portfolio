@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateIineTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('iine', function (Blueprint $table) {
             $table->id('login_id')->comment('ログインid');
-            $table->string('password')->comment('パスワード');
-            $table->string('user_name')->comment('ユーザーネーム');
-            $table->datetime('created_at')->comment('作成日');
+            $table->action('iine')->comment('いいね');
+            $table->id('toukou_id')->comment('投稿id');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('iine');
     }
 }
