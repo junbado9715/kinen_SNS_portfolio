@@ -14,9 +14,11 @@ class CreateCommentTable extends Migration
     public function up()
     {
         Schema::create('comment', function (Blueprint $table) {
-            $table->id('login_id')->comment('ログインid');
+            $table->id();
             $table->text('comment')->comment('コメント');
-            $table->id('toukou_id')->comment('投稿id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('toukou_id')->comment('投稿id');
+            $table->timestamps();
         });
     }
 

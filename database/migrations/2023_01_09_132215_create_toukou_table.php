@@ -14,10 +14,10 @@ class CreateToukouTable extends Migration
     public function up()
     {
         Schema::create('toukou', function (Blueprint $table) {
-            $table->id('login_id')->comment('ログインid');
-            $table->id('toukou_id')->comment('投稿id');
+            $table->id();
+            $table->unsignedInteger('user_id')->comment('ユーザーid');
             $table->text('content')->comment('投稿内容');
-            $table->datetime('created_at')->comment('投稿日時');
+            $table->timestamps();
         });
     }
 

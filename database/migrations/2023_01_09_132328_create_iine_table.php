@@ -14,9 +14,10 @@ class CreateIineTable extends Migration
     public function up()
     {
         Schema::create('iine', function (Blueprint $table) {
-            $table->id('login_id')->comment('ログインid');
-            $table->action('iine')->comment('いいね');
-            $table->id('toukou_id')->comment('投稿id');
+            $table->id();
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('toukou_id')->comment('投稿id');
+            $table->timestamps();
         });
     }
 

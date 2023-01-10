@@ -9,6 +9,9 @@
     <body>
         <div class="main-visual">
         <h1>ログイン</h1>
+        @if (session('front.user_register_success') == true)
+                ユーザを登録しました!!<br>
+        @endif
         <form action="/login" method="post">
             @csrf
             ログインID:<input name="id" value="{{ old('id') }}"><br>

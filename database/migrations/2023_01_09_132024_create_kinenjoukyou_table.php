@@ -14,10 +14,11 @@ class CreateKinenjoukyouTable extends Migration
     public function up()
     {
         Schema::create('kinenjoukyou', function (Blueprint $table) {
-            $table->id('login_id')->comment('ログインid');
-            $table->date('price_cigarettes')->comment('たばこ1箱の金額');
-            $table->date('oneday_cigarettes')->comment('1日に吸うたばこの本数');
+            $table->id();
+            $table->integer('price_cigarettes')->comment('たばこ1箱の金額');
+            $table->integer('oneday_cigarettes')->comment('1日に吸うたばこの本数');
             $table->text('goal')->comment('目標');
+            $table->timestamps();
         });
     }
 
